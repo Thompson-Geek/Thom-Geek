@@ -1,0 +1,4 @@
+config BR2_PACKAGE_BME280
+	bool "bme280 example"
+	help
+		bme280 example
