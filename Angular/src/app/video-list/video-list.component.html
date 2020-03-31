@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-xs-12">
+      <h2>Vos vidéos</h2>
+      <div class="list-group">
+        <button
+          class="list-group-item"
+          *ngFor="let video of videos; let i = index"
+          (click)="onViewVideo(i)">
+          <h3 class="list-group-item-heading">
+            {{ video.title }}
+            <button class="btn btn-default pull-right" (click)="onDeleteVideo(video)">
+              <span class="glyphicon glyphicon-minus"></span>
+            </button>
+          </h3>
+          <p class="list-group-item-text">{{ video.author }}</p>
+        </button>
+      </div>
+      <button class="btn btn-primary" (click)="onNewVideo()">Nouvelle vidéo</button>
+    </div>
+  </div>
