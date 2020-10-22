@@ -1,0 +1,220 @@
+.mat-card {
+  border-radius: 8px !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+  box-shadow: 0 0 24px rgba(52,61,72,.2) !important;
+  margin-bottom: 16px;
+}
+
+.search-result {
+  .item {
+    border-radius: 8px;
+    box-shadow: none;
+    overflow: hidden;
+    margin-bottom: 16px;
+    .header {
+      background-image: url('https://images.1000ps.net/images_bikekat/2018/32-Peugeot/7972-Django_125_Allure/1.jpg?height=950&width=1500&mode=crop');
+      background-size: cover;
+      height: 250px;
+      margin: -16px -16px 0 -16px;
+      display: flex;
+      color: white;
+      position: relative;
+      .rating {
+        margin: 16px;
+        color: #FFEB3B;
+      }
+      .price {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        padding: 8px 16px;
+        font-size: 13px;
+        border-radius: 4px;
+      }
+    }
+    .description {
+      .title {
+        color: #F44336;
+        font-size: 24px;
+        margin: 16px 0 0 0;
+      }
+      .company {
+        color: #999;
+        margin: 0;
+        font-size: 14px;
+      }
+      .info {
+        list-style: none;
+        padding-left: 0px;
+        display: flex;
+        flex-wrap: wrap;
+        li {
+          max-width: 50%;
+          width: 100%;
+          &::before {
+            content: "check_circle_outline";
+            position: relative;
+            top: 4px;
+            font-family: 'Material Icons';
+            font-size: 1.36em;
+            line-height: 1.5;
+            color: #F44336;
+            margin-right: 8px;
+          }
+        }
+      }
+      .action {
+        margin-top: 24px;
+        text-align: right;
+        .mat-flat-button {
+          min-width: 200px;
+        }
+      }
+    }
+  }
+}
+
+
+.bike-preview {
+  &>.image {
+    height: 400px;
+    margin: -16px -16px 8px -16px !important;
+  }
+
+  .small-image {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .image {
+      background-size: cover;
+      background-position: center;
+      width: 96px;
+      height: 96px;
+      margin: 0 4px;
+    }
+  }
+
+  .title {
+    color: $primary-color;
+    font-size: 20px;
+    margin: 16px 0 0 0;
+  }
+  .company {
+    color: $grey-color;
+    margin: 0 0 8px 0;
+    font-size: 13px;
+  }
+  .rating { padding-bottom: 24px; margin-top: -4px }
+  .mat-subheading { margin: 0; }
+  .mat-body-1 { margin: 0 0 16px 0 }
+  .feature {
+    margin: 0 0 16px 0;
+    font-size: 14px;
+    list-style: none;
+    padding-left: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      max-width: 50%;
+      width: 100%;
+      &::before {
+        content: "check_circle_outline";
+        position: relative;
+        top: 4px;
+        font-family: 'Material Icons';
+        font-size: 1.36em;
+        line-height: 1.5;
+        color: $primary-color;
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+
+// =============== HISTORY =============== //
+.book-item {
+  .name {
+    color: $primary-color;
+    font-size: 18px;
+    margin: 0 0 8px 0;
+  }
+  .image {
+    width: 112px;
+    height: 112px;
+    background-size: cover;
+    background-position: center;
+  }
+  .summary {
+    display: flex;
+    margin-bottom: 16px;
+    .label  {
+      font-size: 12px;
+      color: $grey-color;
+    }
+    .date {
+      font-size: 14px;
+      margin: 0 0 8px 0;
+    }
+  }
+  .company { text-align: right; }
+  .phone { color: $grey-color; }
+  .address { font-size: 12px; }
+
+  .price {
+    h3 {
+      font-size: 32px;
+      font-weight: 400;
+      color: $primary-color;
+      margin: 0;
+      line-height: 1;
+      small { font-size: 24px; }
+    }
+    p {
+      margin: 8px 0 0 0;
+      color: $primary-color-lighten;
+      font-weight: 600;
+      line-height: 1;
+    }
+  }
+  .button {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    button { margin-left: 8px }
+    button:disabled { color: $primary-color !important; }
+  }
+}
+
+
+// ================= NOTIFICATION CARD ================== //
+.notification-card {
+  border-top: 1px solid #ddd;
+  padding: 12px;
+  white-space: normal;
+  text-align: left;
+  &.unread {
+    background-color: #FFF9C4;
+    border-top: 1px solid #FFEB3B;
+    .mat-body-1, .mat-caption { color: #444 }
+  }
+  &:hover { background-color: $grey-hover; }
+  a {
+    color: #616161;
+    text-decoration: none;
+  }
+  .mat-body-1 {
+    font-weight: bold;
+    margin: 0;
+  }
+  .mat-caption { margin: 0 0 8px 0; line-height: 12px }
+  .date { margin: 0; color: $grey-color }
+}
+
+.manual-payment-card {
+  border: 1px solid $grey-color;
+  border-radius: 6px;
+  padding: 16px;
+  .mat-body-2, .mat-subheading { font-weight: bold }
+}

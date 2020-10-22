@@ -1,0 +1,7 @@
+@mixin width-same-as-height() {
+  &::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+}

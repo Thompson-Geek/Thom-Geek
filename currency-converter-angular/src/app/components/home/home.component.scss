@@ -1,0 +1,30 @@
+.content{
+    width: 50%;
+    margin: 0 auto;
+    .t-currency{
+        font-style: italic;
+        font-size: 18px;
+    }
+    .subt-currency{
+        font-weight: 600;
+        font-size: 20px;
+        text-align: left;
+    }
+    .subt-value{
+        font-weight: 400;
+        font-size: 20px;
+        text-align: right;
+    }
+    .form-usd{
+        border-bottom: solid 1px black;
+        margin-bottom: 15px;
+    }
+    .select-currency{
+        display:block;
+        width: 80%;
+        margin: 0 auto;
+    }
+    button{
+        float:right;
+    }
+}

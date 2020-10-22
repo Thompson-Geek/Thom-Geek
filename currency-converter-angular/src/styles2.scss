@@ -1,0 +1,54 @@
+@import "./styles/variables.scss";
+@import "./styles/mixins.scss";
+@import "./styles/color.scss";
+@import "~@angular/material/theming";
+@import '~ngx-bar-rating/themes/br-default-theme';
+@import "./styles/screen.scss";
+@import "./styles/general.scss";
+@import "./styles/typography.scss";
+@import "./styles/grid.css";
+@import "./styles/cards.scss";
+@import "./styles/form.scss";
+@import "./styles/button.scss";
+@import "../node_modules/sweetalert2/src/sweetalert2.scss";
+@import '~slider-carousel/slider-carousel.scss';
+@include slider-carousel();
+
+@include mat-core();
+$candy-app-primary: mat-palette($mat-red);
+$candy-app-accent: mat-palette($mat-amber, 800);
+$candy-app-warn: mat-palette($mat-red);
+$candy-app-theme: mat-light-theme(
+  $candy-app-primary,
+  $candy-app-accent,
+  $candy-app-warn
+);
+
+$custom-typography: mat-typography-config(
+  $font-family: "Poppins, sans-serif"
+);
+
+@include angular-material-theme($candy-app-theme);
+@include angular-material-typography($custom-typography);
+
+.swal2-confirm, .swal2-cancel {
+  border-radius: 36px !important;
+}
+.swal2-confirm {
+  background: linear-gradient(45deg, #EF578D 30%, #F16063 90%) !important;
+}
+.swal2-title { 
+  font-size: 24px !important; 
+  font-weight: 400 !important 
+}
+
+.slider-carousel-preview { 
+  z-index: 102; 
+}
+
+.slider-carousel {
+  .ng-star-inserted.is-current {
+    background-size: cover;
+    background-position: center;
+  }
+}

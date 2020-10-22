@@ -1,0 +1,534 @@
+html { height: 100%; }
+body {
+  font-family: "Poppins", sans-serif !important;
+  margin: 0 !important;
+  color: #616161 !important;
+  // position: relative;
+  min-height: 100%;
+  // height: 100%;
+  background-color: $grey-bg;
+}
+
+.module-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.notification-dropdown {
+  position: relative;
+  display: inline-block;
+}
+.notification-content {
+  position: absolute;
+  left: -160px;
+  width: 360px;
+  border-radius: 6px;
+  max-height: 500px;
+  z-index: 2;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  background-color: white;
+  overflow-x: auto;
+  &.mobile {
+    top: 54px;
+    left: 0;
+    width: calc(100% - 16px);
+    margin: 0 8px;
+  }
+  .header {
+    position: relative;
+    padding: 0 12px;
+    display: flex;
+    .mat-body-1 {
+      color: $primary-color;
+      font-weight: bold;
+      margin: 12px 0;
+    }
+    a {
+      color: $primary-color;
+      position: absolute;
+      right: 12px;
+      top: 8px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+  }
+  .notification-loader { 
+    text-align: center;
+    margin: 8px 0;
+    font-size: 14px;
+  }
+  .action { border-top: 1px solid #ddd; }
+}
+
+// ================== SIDENAV ================= //
+.mat-sidenav-container { background-color: transparent !important }
+.mat-drawer-container {
+  position: inherit !important;
+}
+@media #{$large-and-up} {
+  .mat-drawer {
+    background-color: transparent !important;
+    border-right: 0 !important;
+  }
+}
+.sidenav-company {
+  margin-top: 64px !important;
+  width: 250px;
+  border-right: 0px;
+  padding: 24px;
+  .btn-sidenav {
+    width: calc(100% - 16px);
+  }
+  ul {
+    color: #616161;
+    list-style: none;
+    padding-left: 32px;
+    li { margin: 20px 0 }
+    a {
+      color: #616161;
+      text-decoration: none;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+    .active { color: $primary-color; }
+    .material-icons { margin-right: 8px; }
+  }
+  ul.parent {
+    padding-left: 0px;
+    &>li {
+      &>a { font-weight: bold; }
+    }
+  }
+}
+// ======================== END SIDENAV ==================== //
+
+
+// ======================== GENERAL STYLE =============== //
+.container {
+  width: 100%;
+  margin: 0;
+  padding-bottom: 32px;
+  .content {
+    max-width: 968px;
+    margin-top: 80px;
+  }
+}
+
+.breadcrumb {
+  &.margin { margin-top: -16px; }
+  margin-bottom: 16px;
+  color: $grey-color;
+  font-size: 13px;
+  a {
+    color: $grey-color;
+    text-decoration: none;
+  }
+  span { font-weight: bold; }
+  .mat-icon {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    margin: 0 4px;
+  }
+}
+
+.row {
+  padding: 0px;
+  margin: 0 -8px;
+  .col { padding: 0 8px }
+}
+
+.material-icons { vertical-align: middle; }
+
+.separator { border-top: 1px solid #bbb; margin: 16px 0; }
+
+// FOR A HREF ELEMENT
+// a:not([href=""]) {
+a {
+  text-decoration: none;
+  color: $primary-color;
+  -o-transition:.3s;
+  -ms-transition:.3s;
+  -moz-transition:.3s;
+  -webkit-transition:.3s;
+  &:hover { opacity: 0.7; }
+}
+
+ul.feature {
+  list-style: none;
+  padding-left: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 14px;
+  li {
+    max-width: 50%;
+    width: 100%;
+    &::before {
+      content: "check_circle_outline";
+      position: relative;
+      top: 4px;
+      font-family: 'Material Icons';
+      font-size: 1.36em;
+      line-height: 1.5;
+      color: $primary-color;
+      margin-right: 8px;
+    }
+  }
+}
+
+.table-responsive {
+  overflow-x:auto;
+  table { width: 100% }
+  table {
+    border-spacing: 0;
+    th {
+      font-size: 14px;
+      text-align: left;
+    }
+    td, th {
+      border-bottom: 1px solid #ddd;
+      padding: 8px;
+    }
+}
+}
+
+.pagination {
+  margin: 16px 1px;
+  display: flex;
+  background-color: white;
+  .item {
+    width: 18px;
+    text-align: center;
+    padding: 6px;
+    border: 1px solid #ddd;
+    margin-left: -1px;
+    color: #616161;
+    text-decoration: none;
+    font-size: 12px;
+    &.active {
+      background-color: #e57373;
+      color: white;
+      &:hover { color: white }
+    }
+    &:hover {
+      border: 1px solid #e57373;
+      z-index: 2;
+      color: #e57373
+    }
+  }
+  .mat-icon {
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+  }
+}
+
+.stepper {
+  display: flex;
+  padding: 16px;
+  .step, .stepper-line {
+    width: 100%;
+    text-align: center;
+  }
+  .step.active {
+    .step-circle { background-color: $primary-color-lighten; }
+    .step-label { color: $primary-color }
+  }
+  .step-circle {
+    display: block;
+    background-color: $grey-color;
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+    color: white;
+    margin: 0 auto 6px;
+    font-size: 12px;
+    line-height: 24px;
+  }
+  .step-label {
+    display: block;
+    font-size: 14px;
+  }
+  .stepper-line {
+    border-top: 1px solid $grey-color;
+    margin: 12px -5% 0;
+    &.active { border-top: 1px solid $primary-color-lighten; }
+  }
+}
+// ====================== END GENERAL STYLE ================= //
+
+// ==================== STAR RATING ================== //
+.br-default {
+  margin: 0 !important;
+  width: inherit;
+  .br-selected:after { color: $star-color !important; }
+  .br-unit {
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    margin-right: 0;
+  }
+}
+
+
+// ================== SKELETON LOADER =============== //
+.skeleton {
+  // &:hover { background-color: white !important; }
+  .skeleton-image {
+    background-color: #EEEEEE !important;
+    background-image: none;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    &.rounded { border-radius: 100%; }
+  }
+  .skeleton-text {
+    height: 16px;
+    background-color: #EEEEEE;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    &.big { height: 24px; }
+    &.small { height: 12px; }
+  }
+  .margin-16 { margin-bottom: 16px }
+  .margin-24 { margin-bottom: 24px }
+}
+
+// =============== NO CONTENT =============== //
+.no-content {
+  padding: 36px 0;
+  text-align: center;
+  .mat-icon {
+    color: $grey-color;
+    width: 104px;
+    height: 104px;
+    font-size: 104px;
+  }
+  p { font-size: 20px; margin-top: 0; }
+}
+
+.slideshow-container {
+  .arrow-container {
+    &:hover:before { opacity: 0.2 !important; }
+  }
+}
+
+
+// ================= ADS =================== //
+.ads-leaderboard a, .ads-scroll a, .ads-side a {
+  &:hover { opacity: 1; }
+}
+.ads-leaderboard {
+  max-width: 728px;
+  max-height: 90px;
+  background-color: white;
+  margin: 16px;
+  line-height: 0;
+  padding: 0 !important;
+  img {
+    max-width: 728px;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.ads-scroll {
+  max-width: 728px;
+  max-height: 90px;
+  overflow: hidden;
+  img {
+    max-width: 728px;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.ads-side {
+  max-width: 100%;
+  max-height: auto;
+  background-color: white;
+  line-height: 0;
+  padding: 0 !important;
+  img {
+    // max-width: 728px;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.ad-plan-radio>.mat-radio-label {
+  align-items: flex-start !important;
+}
+
+.company-tab {
+  .mat-tab-body-content { padding: 16px }
+  .mat-tab-body.mat-tab-body-active {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  .mat-tab-label-container { background-color: white; }
+  .mat-tab-labels {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
+
+mat-expansion-panel {
+  box-shadow: none !important;
+  border: 1px solid #B0BEC5;
+  margin-top: -1px !important;
+  margin-bottom: 0px !important;
+  mat-expansion-panel-header {
+    mat-panel-title {
+      span {
+        margin-left: 16px;
+        padding: 12px 0;
+      }
+    }
+    mat-panel-description {
+      padding: 12px 0;
+    }
+  }
+}
+
+.status-flag {
+  font-size: 13px;
+  padding: 2px 12px;
+  border-radius: 21px;
+  margin-bottom: 8px;
+  display: inline-block;
+  text-transform: uppercase;
+  &.flag-red {
+    border: 1px solid $primary-color;
+    color: $primary-color;
+  }
+  &.flag-green {
+    border: 1px solid #2E7D32;
+    color: #2E7D32;
+  }
+  &.flag-yellow {
+    border: 1px solid #F9A825;
+    color: #F9A825;
+  }
+}
+
+.abcRioButton.abcRioButtonLightBlue {
+  width: 100% !important;
+  border-radius: 36px;
+  .abcRioButtonIcon { margin-left: 16px }
+  .abcRioButtonContents { 
+    margin-left: -30px; 
+    font-size: 14px !important; 
+  }
+}
+
+.mat-hint, .mat-error {
+  line-height: 14px;
+}
+
+
+.google-button {
+  height: 40px;
+  width: 100%;
+  border-width: 0;
+  border-radius: 40px;
+  background: white;
+  color: #737373;
+  white-space: nowrap;
+  box-shadow: 1px 1px 0px 1px rgba(0,0,0,0.05);
+  transition-property: background-color, box-shadow;
+  transition-duration: 150ms;
+  transition-timing-function: ease-in-out;
+  padding: 0;
+  
+  &:focus,
+  &:hover {
+    box-shadow: 1px 4px 5px 1px rgba(0,0,0,0.1);
+    cursor: pointer;
+  }
+  
+  &:active {
+    background-color: #e5e5e5;
+    box-shadow: none;
+    transition-duration: 10ms;
+  }
+}
+    
+.google-button__icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 8px 0 8px 8px;
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+}
+
+.google-button__text {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 24px;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Roboto',arial,sans-serif;
+}
+
+.bike-multiple-upload {
+  .upload-container {
+    width: 100%;
+    position: relative;
+    margin-bottom: 16px;
+    background-color: #ddd;
+    @include width-same-as-height();
+    &:hover { cursor: pointer; }
+
+    .bike-image {
+      width: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      margin-bottom: 16px;
+      position: absolute;
+      @include width-same-as-height();
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .status-content {
+      position: absolute;
+      width: 100%;
+
+      .bike-image-close {
+        position: absolute;
+        right: 4px;
+        top: 4px;
+        color: white;
+        z-index: 1;
+        .mat-icon { background-color: rgba(0, 0, 0, 0.2); border-radius: 100%; }
+      }
+      
+      .bike-image-add {
+        position: absolute;
+        left: calc(50% - 48px);
+        width: 96px;
+        height: 96px;
+        font-size: 96px;
+        color: white;
+        margin-top: calc(50% - 48px);
+      }
+      
+      .bike-image-add-small, .bike-image-loading {
+        position: absolute;
+        left: calc(50% - 24px);
+        width: 48px;
+        height: 48px;
+        font-size: 48px;
+        color: white;
+        margin-top: calc(50% - 24px);
+        z-index: 1;
+      }
+    }
+
+  }
+}

@@ -1,0 +1,82 @@
+<div class="content">
+  <mat-card>
+    <form class="form-usd row" [formGroup]="formValue">
+      <div class="col s12">
+        <h3 class="t-currency">Convertisseur Euro / Dollar </h3>
+      </div>
+      <div class="col s12 m6 l6 subt-currency" >
+        EUR
+      </div>
+      <mat-form-field class="col s12 m6 l6" appearance="outline" color="accent">
+          <mat-label>Valeur</mat-label>
+          <input type="text" 
+          matInput 
+          formControlName="value" 
+          (keyup.enter)="onChangedValue($event.target.value)"
+          (blur)="onChangedValue($event.target.value)"
+          placeholder="1.1">
+      </mat-form-field>
+    </form>
+    <div class="col">
+      <div class="row">
+
+        <div [hidden]="!isUsd">
+          <mat-card>
+            <div class="col s10 m10 l10">
+              <div class="row">
+                <div class="col s4 m4 l4">
+                  <h3 class="subt-currency">USD</h3>
+                  <p>United States Dollar</p>
+                  <p>1 EUR = {{ currencies.USD | number }}</p>
+                </div>
+                <div class="col s6 m6 l6">
+                    <h3 class="subt-value">USD {{ usd_value | number }}</h3>
+                </div>
+              </div>
+            </div>
+            <div class="col s2 m2 l2">
+              <div class="row">
+                <span>
+                  <button (click)="hideUsd()">&times;</button>
+                </span>
+              </div>
+            </div>
+          </mat-card>
+        </div>
+
+        <div [hidden]="!isEur">
+          <mat-card>
+            <div class="col s10 m10 l10">
+              <div class="row">
+                <div class="col s4 m4 l4">
+                  <h3 class="subt-currency">EUR</h3>
+                  <p>EUR - Europe</p>
+                  <p>1 USD = EUR {{ currencies.EUR | number }}</p>
+                </div>
+                <div class="col s6 m6 l6">
+                    <h3 class="subt-value">EUR {{ eur_value | number }}</h3>
+                </div>
+              </div>
+            </div>
+            <div class="col s2 m2 l2">
+              <div class="row">
+                <span>
+                  <button (click)="hideEur()">&times;</button>
+                </span>
+              </div>
+            </div>
+          </mat-card>
+        </div>
+
+        <mat-form-field class="select-currency">
+          <select matNativeControl required [(ngModel)]="selected" (change)="getOption()">
+            <option value=""> </option>
+            <option [hidden]="isUsd" value="USD">USD</option>
+            <option [hidden]="isEur" value="EUR">EUR</option>
+          </select>
+        </mat-form-field>
+      </div>
+    </div>
+
+  </mat-card>
+</div>

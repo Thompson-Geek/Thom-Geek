@@ -1,0 +1,70 @@
+// ================= BUTTON ================= //
+.mat-flat-button, .mat-stroked-button, .mat-button-toggle-group {
+  &:hover { opacity: 1 }
+  border-radius: 36px !important;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  &.small, &.small-square {
+    font-size: 12px;
+    line-height: 28px;
+    padding: 0 12px;
+    .mat-icon {
+      font-size: 16px;
+      height: 16px;
+      margin: 6px 0;
+    }
+  }
+  &.small-square { border-radius: 4px !important; }
+  &.block { width: 100% !important }
+  .mat-spinner {
+    margin: 6px auto !important;
+    circle { stroke: white }
+  }
+}
+.chips-group {
+  padding: 0 4px;
+  margin-bottom: 4px;
+  .mat-button-toggle.chip {
+    font-size: 12px;
+    border-radius: 36px !important;
+    margin: 0 4px 8px 4px;
+    .mat-button-toggle-label-content { line-height: 36px; }
+    &.mat-button-toggle-checked {
+      background-color: transparent;
+      border: 1px solid $primary-color;
+      color: $primary-color;
+    }
+  }
+}
+// ================ END BUTTON ================ //
+
+// ================= BUTTON GROUP ============== //
+
+.mat-button-toggle-group {
+  border-radius: 36px !important;
+  // height: 36px;
+  border: 0 !important;
+  &.block { 
+    width: 100%;
+    .mat-button-toggle { width: 100% }
+  }
+  .mat-button-toggle { 
+    background-color: transparent; 
+    color: inherit !important;
+  }
+  .mat-button-toggle-label-content {
+    line-height: 36px !important;
+  }
+  &.small .mat-button-toggle-label-content {
+    line-height: 28px !important;
+  }
+  &.no-border .mat-button-toggle + .mat-button-toggle {
+    border-left: 0 !important;
+  }
+  .mat-icon {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+  }
+}

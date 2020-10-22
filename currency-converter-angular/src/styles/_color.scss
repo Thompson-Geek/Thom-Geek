@@ -1,0 +1,59 @@
+.primary-bg {
+  background-color: $primary-color !important;
+  color: white !important;
+}
+.primary-darken-bg {
+  background-color: $primary-color-darken !important;
+  color: white !important;
+}
+.primary-lighten-bg {
+  background-color: $primary-color-lighten !important;
+  color: white !important;
+}
+.green-lighten-bg {
+  background-color: #81c784 !important;
+  color: white !important;
+}
+.yellow-bg {
+  background-color: $star-color !important;
+  color: white !important;
+}
+
+.primary-text { color: $primary-color !important }
+.white-text { color: white !important }
+.grey-text { color: $grey-color !important }
+.green-text { color: #4CAF50 !important }
+.green-lighten-text { color: #81c784 !important }
+
+.primary-gradient:not([disabled]) {
+  // background: linear-gradient(45deg, #E95875 30%, #EB678C 90%) !important;
+  background: linear-gradient(45deg, #EF578D 30%, #F16063 90%) !important;
+  // background: linear-gradient(45deg, #ED1F25 30%, #F16663 90%) !important;
+  color: white !important;
+}
+.green-gradient {
+  background: linear-gradient(45deg, #43A047 0%, #1de9b6 100%) !important;
+  color: white !important;
+}
+.yellow-gradient {
+  background: linear-gradient(45deg, #ff6f00 0%, #ffca28 100%) !important;
+  color: white !important;
+}
+
+/*.mat-stroked-button.primary-gradient,*/ .primary-border {
+  border: 1px solid #F44336 !important;
+  color: #F44336 !important;
+  background: none !important;
+}
+
+.yellow-border {
+  border: 1px solid #F9A825 !important;
+  span { color: #F9A825 !important; }
+  background: none !important;
+}
+
+.green-border {
+  border: 1px solid #2E7D32 !important;
+  span { color: #2E7D32 !important; }
+  background: none !important;
+}
